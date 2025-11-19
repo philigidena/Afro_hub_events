@@ -1,4 +1,5 @@
 import React from 'react';
+import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
 import Statistics from './components/Statistics';
@@ -11,6 +12,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="font-body bg-brand-dark text-white min-h-screen">
+      <Navigation />
       <Hero />
       <About />
       <Statistics />

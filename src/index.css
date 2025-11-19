@@ -83,6 +83,54 @@
     }
 }
 
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes reveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* Utility Classes */
 .animate-fadeIn {
     animation: fadeIn 1s ease-out;
@@ -108,6 +156,18 @@
     animation: twinkle 2s ease-in-out infinite;
 }
 
+.animate-pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-scaleIn {
+    animation: scaleIn 0.6s ease-out;
+}
+
+.animate-reveal {
+    animation: reveal 0.8s ease-out;
+}
+
 /* Gradient Utilities */
 .gradient-gold {
     background: linear-gradient(135deg, #D4AF37 0%, #E5C158 100%);
@@ -121,24 +181,42 @@
     background: linear-gradient(to bottom, rgba(5, 10, 24, 0) 0%, rgba(5, 10, 24, 0.9) 100%);
 }
 
-/* Global Scrollbar */
+/* African-inspired decorative elements */
+.kente-border {
+    border-image: linear-gradient(90deg, #D4AF37 33%, #E5C158 33%, #E5C158 66%, #D4AF37 66%) 1;
+}
+
+/* Global Scrollbar - African-inspired */
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 12px;
 }
 
 ::-webkit-scrollbar-track {
     background: #050A18;
+    border-left: 2px solid #D4AF37;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #D4AF37;
-    border-radius: 5px;
+    background: linear-gradient(180deg, #D4AF37 0%, #E5C158 50%, #D4AF37 100%);
+    border-radius: 0;
+    border-left: 2px solid #050A18;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #E5C158;
+    background: linear-gradient(180deg, #E5C158 0%, #D4AF37 50%, #E5C158 100%);
 }
 
 body {
     scroll-behavior: smooth;
+}
+
+/* Selection styling */
+::selection {
+    background: #D4AF37;
+    color: #050A18;
+}
+
+::-moz-selection {
+    background: #D4AF37;
+    color: #050A18;
 }
